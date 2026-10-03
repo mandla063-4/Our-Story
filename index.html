@@ -1,58 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Our Little Story ❤️</title>
 
-🌷
-A LITTLE SOMETHING FOR YOU
-Our little story.
-I made something for you. Not because I had to. Because I wanted to.
-Open it 💌
-🌸
-🌷
-🚆
-CHAPTER 01
-The Gautrain.
-For me, even taking the Gautrain was an experience. But doing something new with you made it feel like an adventure.
-Funny how the right person can make an ordinary day feel different.
-Next →
-🎬❤️
-CHAPTER 02
-The movie.
-We chose a horror movie. Which was brave of me considering I am absolutely not built for horror movies. 😭
-You held my hand through it all... and somehow, at the end of all that... we kissed. ❤️
-Next →
-🎱
-CHAPTER 03
-Then you beat me.
-We spent the day together and ended up at Cracker Jacks with Michael.
-Then you beat me at pool. I'm not bitter. Okay, maybe a little. 😂
-Next →
-🏹
-CHAPTER 04
-Same team.
-Then we played archery tag. And I loved that we were on the same team.
-Working together. Figuring things out. Trying to win. I think I could get used to being on your team.
-Next →
-🧱🌷
-CHAPTER 05
-The little things.
-You like LEGO. You like flowers. And I've started paying attention to the little things that make you smile.
-Because I want to know you — properly.
-Next →
-❤️
-CHAPTER 06
-I realised something.
-I don't just want another day with you.
-I want more days. More adventures. More random plans. More flowers. More LEGO. More games I pretend I'll win.
-More memories. The kind that start with, “Remember when…?”
-Next →
-💗
-CHAPTER 07
-I want to spend my life making those memories with you.
-One day at a time. One memory at a time.
-Tap to continue →
-🌷💗🌸
-CHAPTER 08
-Will you build the rest of this story with me?
-There's a lot more I want to discover, laugh about, build and experience with you.
-YES ❤️
-Obviously yes 🥹
-← Back
-Next →
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #fff7f3;
+  color: #382b35;
+  overflow: hidden;
+}
+
+body {
+  touch-action: pan-y;
+}
+
+.app {
+  height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, #fff8f5, #ffeaf0);
+}
+
+.progress {
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  right: 18px;
+  height: 5px;
+  background: #ffffff80;
+  border-radius: 10px;
+  z-index: 20;
+}
+
+.progress i {
+  display: block;
+  height: 100%;
+  width: 11.11%;
+  background: #e85d86;
+  border-radius: 10px;
+  transition: 0.35s;
+}
+
+.deck {
+  height: 100%;
+  display: flex;
+  transition: transform 0.45s cubic-bezier(.22,.8,.25,1);
+}
+
+.card {
+  min-width: 100%;
+  height: 100%;
+  padding: 70px 25px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  width: min(520px, 100%);
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #c84e76;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+h1 {
+  font-size: clamp(40px, 12vw, 70px);
+  line-height: 0.98;
+  margin: 0 0 20px;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+h2 {
+  font-size: clamp(30px, 8vw, 48px);
+  line-height: 1.02;
+  margin: 0 0 18px;
+  font-weight: 900;
+  letter-spacing: -1.2px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.55;
+  margin: 0 auto 22px;
+  max-width: 450px;
+}
+
+.small {
+  font-size: 15px;
+  color: #765f6b;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 15px 24px;
+  font-size: 17px;
+  font-weight: 800;
+  background: #e85d86;
+  color: white;
+  box-shadow: 0 10px 25px #c84e7630;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: white;
+  color: #c84e76;
+  border: 2px solid #f0b2c4;
+}
+
+.emoji {
+  font-size: 65px;
+  margin-bottom: 18px;
+}
+
+.heart {
+  font-size: 90px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.float {
+  position: absolute;
+  font-size: 34px;
+  opacity: 0.35;
+  animation: float 5s ease-in-out infinite;
+}
+
+.f1 {
+  left: 8%;
+  top: 20%;
+}
+
+.f2 {
+  right: 8%;
+  top: 28%;
+  animation-delay: 1s;
+}
+
+.f3 {
+  left: 12%;
+  bottom: 18%;
+  animation-delay: 2s;
+}
+
+.f4 {
+  right: 12%;
+  bottom: 12%;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-18px) rotate(8deg);
+  }
+}
+
+.note {
+  background: #ffffffaa;
+  border: 1px solid #ffffff;
+  padding: 18px;
+  border-radius: 22px;
+  margin: 20px 0;
+  box-shadow: 0 12px 30px #7b405020;
+}
+
+.final {
+  background: linear-gradient(160deg, #ffe4ec, #fff8df);
+}
+
+.controls {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 20;
+}
+
+.controls button {
+  padding: 11px 17px;
+  font-size: 14px;
+  background: #ffffffcc;
+  color: #a34264;
+  box-shadow: none;
+}
+
+.confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.confetti span {
+  position: absolute;
+  font-size: 25px;
+  animation: fall 2.5s linear forwards;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-10vh) rotate(0);
+  }
+
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <div class="progress">
+    <i id="bar"></i>
+  </div>
+
+  <div class="deck" id="deck">
+
+    <!-- CHAPTER 00 -->
+
+    <section class="card">
+      <div class="inner">
+
+        <div class="emoji">🌷</div>
+
+        <div class="eyebrow">
+          A little something for you
+        </div>
+
+        <h1>
+          Our little story.
+        </h1>
+
+        <p>
+          I made something for you.
+          Not because I had to.
+          Because I wanted to.
+        </p>
+
+        <button onclick="next()">
+          Open it 💌
+        </button>
+
+      </div>
+
+      <span class="float f1">🌸</span>
+      <span class="float f2">🌷</span>
+    </section>
+
+
+    <!-- CHAPTER 01 -->
+
+    <section class="card">
+      <div class="inner">
+
+        <div class="emoji">🚆</div>
+
+        <div class="eyebrow">
+          Chapter 01
+        </div>
+
+        <h2>
+          The Gautrain.
+        </h2>
+
+        <p>
+          For me, even taking the Gautrain was an experience.
+          But doing something new with you made it feel like an adventure.
+        </p>
+
+        <div class="note">
+          Funny how the right person can make an ordinary day feel different.
+        </div>
+
+        <button onclick="next()">
+          Next →
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- CHAPTER 02 -->
+
+    <section class="card">
+      <div class="inner">
+
+        <div class="emoji">🎬❤️</div>
+
+        <div class="eyebrow">
+          Chapter 02
+        </div>
+
+        <h2>
+          The movie.
+        </h2>
+
+        <p>
+          We chose a horror movie.
+          Which was brave of me considering I am absolutely not built for horror movies. 😭
+        </p>
+
+        <div class="note">
+          You held my hand through it all...
+          and somehow, at the end of all that...
+          we kissed. ❤️
+        </div>
+
+        <button onclick="next()">
+          Next →
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- CHAPTER 03 -->
+
+    <section class="card">
+      <div class="inner">
+
+        <div class="emoji">🎱</div>
+
+        <div class="eyebrow">
+          Chapter 03
+        </div>
+
+        <h2>
+          Then you beat me.
+        </h2>
+
+        <p>
+          We spent the day together and ended up at Cracker Jacks with Michael.
+        </p>
+
+        <div class="note">
+          Then you beat me at pool.
+          I'm not bitter.
+          Okay, maybe a little. 😂
+        </div>
+
+        <button onclick="next()">
+          Next →
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- CHAPTER 04 -->
+
+    <section class="card">
+      <div class="inner">
+
+        <div class="emoji">🏹</div>
+
+        <div class="eyebrow">
+          Chapter 04
+        </div>
+
+        <h2>
+          Same team.
+        </h2>
+
+        <p>
+          Then we played archery tag.
+          And I loved that we were on the same team.
+        </p>
+
+        <div class="note">
+          Working together.
+          Figuring things out.
+          Trying to win.
+          I think I could get used to being on your team.
+        </div>
+
+        <button onclick="next()">
+          Next →
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- CHAPTER 05 -->
+
+    <section class="card">
+      <div class="inner">
+
+        <div class="emoji">🧱🌷</div>
+
+        <div class="eyebrow">
+          Chapter 05
+        </div>
+
+        <h2>
+          The little things.
+        </h2>
+
+        <p>
+          You like LEGO.
+          You like flowers.
+          And I've started paying attention to the little things that make you smile.
+        </p>
+
+        <div class="note">
+          Because I want to know you — properly.
+        </div>
+
+        <button onclick="next()">
+          Next →
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- CHAPTER 06 -->
+
+    <section class="card">
+      <div class="inner">
+
+        <div class="emoji">❤️</div>
+
+        <div class="eyebrow">
+          Chapter 06
+        </div>
+
+        <h2>
+          I realised something.
+        </h2>
+
+        <p>
+          I don't just want another day with you.
+        </p>
+
+        <p>
+          I want more days.
+          More adventures.
+          More random plans.
+          More flowers.
+          More LEGO.
+          More games I pretend I'll win.
+        </p>
+
+        <div class="note">
+          <strong>More memories.</strong>
+          The kind that start with,
+          “Remember when…?”
+        </div>
+
+        <button onclick="next()">
+          Next →
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- CHAPTER 07 -->
+
+    <section class="card">
+      <div class="inner">
+
+        <div class="heart">
+          💗
+        </div>
+
+        <div class="eyebrow">
+          Chapter 07
+        </div>
+
+        <h2>
+          I want to spend my life making those memories with you.
+        </h2>
+
+        <p class="small">
+          One day at a time.
+          One memory at a time.
+        </p>
+
+        <button onclick="next()">
+          Tap to continue →
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- FINAL CHAPTER -->
+
+    <section class="card final">
+      <div class="inner">
+
+        <div class="emoji">
+          🌷💗🌸
+        </div>
+
+        <div class="eyebrow">
+          Chapter 08
+        </div>
+
+        <h2>
+          Will you build the rest of this story with me?
+        </h2>
+
+        <p>
+          There's a lot more I want to discover,
+          laugh about, build and experience with you.
+        </p>
+
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+
+          <button onclick="yes()">
+            YES ❤️
+          </button>
+
+          <button class="secondary" onclick="yes()">
+            Obviously yes 🥹
+          </button>
+
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- NAVIGATION -->
+
+  <div class="controls">
+
+    <button onclick="prev()">
+      ← Back
+    </button>
+
+    <button onclick="next()">
+      Next →
+    </button>
+
+  </div>
+
+</div>
+
+
+<script>
+
+let page = 0;
+
+const total = 9;
+
+const deck = document.getElementById("deck");
+
+const bar = document.getElementById("bar");
+
+
+function update() {
+
+  deck.style.transform =
+    `translateX(-${page * 100}%)`;
+
+  bar.style.width =
+    `${((page + 1) / total) * 100}%`;
+
+}
+
+
+function next() {
+
+  if (page < total - 1) {
+
+    page++;
+
+    update();
+
+  }
+
+}
+
+
+function prev() {
+
+  if (page > 0) {
+
+    page--;
+
+    update();
+
+  }
+
+}
+
+
+function yes() {
+
+  const box = document.createElement("div");
+
+  box.className = "confetti";
+
+  const symbols = [
+    "❤️",
+    "🌷",
+    "🌸",
+    "✨",
+    "💗"
+  ];
+
+  for (let i = 0; i < 35; i++) {
+
+    const s = document.createElement("span");
+
+    s.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
+
+    s.style.left =
+      Math.random() * 100 + "%";
+
+    s.style.animationDelay =
+      Math.random() * 0.8 + "s";
+
+    s.style.top = "-30px";
+
+    box.appendChild(s);
+
+  }
+
+  document.body.appendChild(box);
+
+  setTimeout(() => {
+
+    alert("Then let's build it. ❤️");
+
+  }, 500);
+
+  setTimeout(() => {
+
+    box.remove();
+
+  }, 3200);
+
+}
+
+
+let startX = 0;
+
+
+document.addEventListener(
+  "touchstart",
+  function(e) {
+
+    startX =
+      e.changedTouches[0].screenX;
+
+  },
+  { passive: true }
+);
+
+
+document.addEventListener(
+  "touchend",
+  function(e) {
+
+    const distance =
+      e.changedTouches[0].screenX - startX;
+
+    if (Math.abs(distance) > 60) {
+
+      if (distance < 0) {
+
+        next();
+
+      } else {
+
+        prev();
+
+      }
+
+    }
+
+  },
+  { passive: true }
+);
+
+
+update();
+
+</script>
+
+</body>
+</html>
